@@ -8,12 +8,13 @@
 		<div class="content">
 			{{ content | excerpt }}
       {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
-      {% if excerpted == 'true' %} <a href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a> {% endif %}
+      
 		</div>
 	<footer>
 		{% include post/categories.html %}
-	
+		
 	{% if page.source.url %}via <a href="{{ page.source.url }}">{{ page.source.title }}</a>{% endif %}
+	{% if excerpted == 'true' %} <a href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a> {% endif %}
 	</footer>
 	
 </article>
