@@ -10,11 +10,11 @@
       {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
       
 		</div>
-	<footer>
-		{% include post/categories.html %}
-		
+	<footer>		
 	{% if page.source.url %}via <a href="{{ page.source.url }}">{{ page.source.title }}</a>{% endif %}
 	{% if excerpted == 'true' %} <a href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a> {% endif %}
+
+	{% include post/categories.html %}
 	</footer>
 	
 </article>
